@@ -8,7 +8,7 @@
         <version>3.0.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>java.backend</groupId>
+    <groupId>backend</groupId>
     <artifactId>education-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>education-project</name>
