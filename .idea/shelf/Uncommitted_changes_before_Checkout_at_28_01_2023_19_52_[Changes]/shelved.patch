@@ -1,0 +1,98 @@
+Index: java/src/main/java/backend/educationproject/EducationProjectApplication.java
+===================================================================
+diff --git a/java/src/main/java/backend/educationproject/EducationProjectApplication.java b/java/src/main/java/backend/educationproject/EducationProjectApplication.java
+new file mode 100644
+--- /dev/null	
++++ b/java/src/main/java/backend/educationproject/EducationProjectApplication.java	
+@@ -0,0 +1,13 @@
++package backend.educationproject;
++
++import org.springframework.boot.SpringApplication;
++import org.springframework.boot.autoconfigure.SpringBootApplication;
++
++@SpringBootApplication
++public class EducationProjectApplication {
++
++    public static void main(String[] args) {
++        SpringApplication.run(EducationProjectApplication.class, args);
++    }
++
++}
+Index: java/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n
+===================================================================
+diff --git a/java/src/main/resources/application.properties b/java/src/main/resources/application.properties
+--- a/java/src/main/resources/application.properties	
++++ b/java/src/main/resources/application.properties	
+@@ -1,1 +1,5 @@
+-
++spring.datasource.url=jdbc:postgresql://localhost:5432/educa
++spring.datasource.username=postgres
++spring.datasource.password=postgres
++#spring.jpa.hibernate.ddl-auto=create
++spring.data.rest.basePath=/api
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"96e91d72-1d9b-431b-888d-44619fcb3445\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2KxvRJLpYVGD1SDOa5EYKTtP6Eb\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"96e91d72-1d9b-431b-888d-44619fcb3445\" name=\"Changes\" comment=\"\" />\r\n      <created>1674929040022</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1674929040022</updated>\r\n      <workItem from=\"1674929041696\" duration=\"82000\" />\r\n      <workItem from=\"1674929192730\" duration=\"539000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"delete\">\r\n      <created>1674929065643</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674929065643</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"delete\">\r\n      <created>1674929306585</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674929306585</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"delete\">\r\n      <created>1674929679981</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1674929679981</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"delete\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"delete\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,7 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="96e91d72-1d9b-431b-888d-44619fcb3445" name="Changes" comment="" />
++    <list default="true" id="96e91d72-1d9b-431b-888d-44619fcb3445" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/EducationProjectApplication.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/java/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/java/src/main/java/java/backend/educationproject/EducationProjectApplication.java" beforeDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -37,6 +42,7 @@
+       <updated>1674929040022</updated>
+       <workItem from="1674929041696" duration="82000" />
+       <workItem from="1674929192730" duration="539000" />
++      <workItem from="1674931126892" duration="618000" />
+     </task>
+     <task id="LOCAL-00001" summary="delete">
+       <created>1674929065643</created>
+@@ -59,7 +65,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1674929679981</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="delete">
++      <created>1674931142215</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1674931142215</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: java/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n    <parent>\r\n        <groupId>org.springframework.boot</groupId>\r\n        <artifactId>spring-boot-starter-parent</artifactId>\r\n        <version>3.0.2</version>\r\n        <relativePath/> <!-- lookup parent from repository -->\r\n    </parent>\r\n    <groupId>java.backend</groupId>\r\n    <artifactId>education-project</artifactId>\r\n    <version>0.0.1-SNAPSHOT</version>\r\n    <name>education-project</name>\r\n    <description>education-project</description>\r\n    <properties>\r\n        <java.version>17</java.version>\r\n    </properties>\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-data-jpa</artifactId>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-data-rest</artifactId>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-jdbc</artifactId>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.postgresql</groupId>\r\n            <artifactId>postgresql</artifactId>\r\n            <scope>runtime</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.projectlombok</groupId>\r\n            <artifactId>lombok</artifactId>\r\n            <optional>true</optional>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-test</artifactId>\r\n            <scope>test</scope>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.springframework.boot</groupId>\r\n                <artifactId>spring-boot-maven-plugin</artifactId>\r\n                <configuration>\r\n                    <excludes>\r\n                        <exclude>\r\n                            <groupId>org.projectlombok</groupId>\r\n                            <artifactId>lombok</artifactId>\r\n                        </exclude>\r\n                    </excludes>\r\n                </configuration>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n\r\n</project>\r\n
+===================================================================
+diff --git a/java/pom.xml b/java/pom.xml
+--- a/java/pom.xml	
++++ b/java/pom.xml	
+@@ -8,7 +8,7 @@
+         <version>3.0.2</version>
+         <relativePath/> <!-- lookup parent from repository -->
+     </parent>
+-    <groupId>java.backend</groupId>
++    <groupId>webproject.backend</groupId>
+     <artifactId>education-project</artifactId>
+     <version>0.0.1-SNAPSHOT</version>
+     <name>education-project</name>
