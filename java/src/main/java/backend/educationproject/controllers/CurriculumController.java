@@ -52,7 +52,7 @@ public class CurriculumController {
 
     }
 
-    @PatchMapping("/{class_id/event/patch")
+    @PatchMapping("/{class_id}/event/patch")
     public void updateEvent(@PathVariable Long class_id) {
 
     }
