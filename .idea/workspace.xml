@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="74461272-72c4-4272-8bf4-0262ce2f921f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/school-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/clientmodels/ClientHomework.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/controllers/CurriculumController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/controllers/EventController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/controllers/HomeworkController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/controllers/JournalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/Event_Types.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/Events.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/Grades.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/Homeworks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/Journals.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/StudentClasses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/Students.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/Subjects.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/Teacher_Subjects.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/entities/Teachers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/mappers/HomeworkMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/Event_TypesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/EventsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/GradesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/HomeworksRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/JournalsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/StudentClassesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/StudentsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/SubjectsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/Teacher_SubjectsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/repositories/TeachersRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/services/EventService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/services/HomeworkService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/backend/educationproject/services/JournalService.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="express" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2L5vZut8jc7nYh7aSlPhwJ1Ao1y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="74461272-72c4-4272-8bf4-0262ce2f921f" name="Changes" comment="" />
+      <created>1675173816779</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675173816779</updated>
+      <workItem from="1675173818611" duration="1135000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
