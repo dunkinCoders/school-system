@@ -1,25 +1,31 @@
 package backend.educationproject.services;
 
-import backend.educationproject.entities.Journals;
-import backend.educationproject.repositories.JournalsRepository;
-import backend.educationproject.repositories.Teacher_SubjectsRepository;
+import backend.educationproject.clientmodels.ClientGrades;
+import backend.educationproject.clientmodels.ClientStudents;
+import backend.educationproject.entities.*;
+import backend.educationproject.mappers.GradeMapper;
+import backend.educationproject.mappers.StudentMapper;
+import backend.educationproject.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Service
 public class JournalService {
     private final Teacher_SubjectsRepository teacher_subjectsRepository;
     private final JournalsRepository journalsRepository;
+    private final StudentClassesRepository studentClassesRepository;
+    private final GradesRepository gradesRepository;
+    private final StudentsRepository studentsRepository;
 
     @Autowired
-
-    public JournalService(Teacher_SubjectsRepository teacher_subjectsRepository, JournalsRepository journalsRepository) {
+    public JournalService(Teacher_SubjectsRepository teacher_subjectsRepository, JournalsRepository journalsRepository, StudentClassesRepository studentClassesRepository, GradesRepository gradesRepository, StudentsRepository studentsRepository) {
         this.teacher_subjectsRepository = teacher_subjectsRepository;
         this.journalsRepository = journalsRepository;
+        this.studentClassesRepository = studentClassesRepository;
+        this.gradesRepository = gradesRepository;
+        this.studentsRepository = studentsRepository;
     }
 
     public List<Journals> getTeacherJournals(Long teacher_id) {
@@ -35,4 +41,62 @@ public class JournalService {
         });
         return journals;
     }
+
+    public Journals getJournalByClassAndSubject(Long class_id, Long subject) {
+        Journals journal = new Journals();
+        teacher_subjectsRepository.findAll().forEach(teacher_subjects -> {
+            if (Objects.equals(teacher_subjects.getStudentClass().getId(), class_id)
+                    && Objects.equals(teacher_subjects.getSubject().getId(), subject)) {
+                journalsRepository.findAll().forEach(journals_objects -> {
+                    if (journals_objects.getTeacher_subject() == teacher_subjects) {
+                        journal.setId(journals_objects.getId());
+                        journal.setTeacher_subject(journals_objects.getTeacher_subject());
+                    }
+                });
+            }
+        });
+        return journal;
+    }
+
+    public List<ClientStudents> getAllGrades(Long id) {
+        List<ClientStudents> grades_list = new ArrayList<>();
+        List<Students> students = getAllStudentsFromClass(id);
+        for (Students st : students) {
+            ClientStudents clientStudent = StudentMapper.toModel(st);
+            clientStudent.setGrades(getAllGradesForStudent(st));
+            grades_list.add(clientStudent);
+        }
+        return grades_list;
+    }
+
+    private List<Students> getAllStudentsFromClass(Long journal_id) {
+        List<Students> students = new ArrayList<>();
+        StudentClasses studentClass = studentClassesRepository.findById(journalsRepository.findById(journal_id)
+                .get()
+                .getTeacher_subject()
+                .getStudentClass()
+                .getId()).get();
+        studentsRepository.findAll().forEach(student -> {
+            if (Objects.equals(student.getStudentClass(), studentClass)) {
+                students.add(student);
+            }
+        });
+        return students;
+    }
+
+    private List<ClientGrades> getAllGradesForStudent(Students student) {
+        List<ClientGrades> grades = new ArrayList<>();
+        gradesRepository.findAll().forEach(grade -> {
+            if (grade.getStudent() == student) {
+                grades.add(GradeMapper.toModel(grade));
+            }
+        });
+        return grades;
+    }
+
+    //soon
+    private List<Grades> getAllSortedGrades() {
+        return null;
+    }
+
 }
