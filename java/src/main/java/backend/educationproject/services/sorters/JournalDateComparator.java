@@ -17,6 +17,9 @@ public class JournalDateComparator implements Comparator<ClientGrades> {
     public int compare(ClientGrades client_grade1, ClientGrades client_grade2) {
         Date date1 = eventsRepository.findById(client_grade1.getEvent_id()).get().getEvent_date();
         Date date2 = eventsRepository.findById(client_grade2.getEvent_id()).get().getEvent_date();
+        if(date2.after(date1)){
+            return -1;
+        }
         if (date1.after(date2)) {
             return 1;
         }

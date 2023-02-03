@@ -15,4 +15,6 @@ public class ClientGrades {
     private Long id;
     @JsonProperty("grade")
     private Integer grade;
+    @JsonProperty("event_id")
+    private Long event_id;
 }

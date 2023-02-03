@@ -8,6 +8,7 @@ public class GradeMapper {
         return ClientGrades.builder()
                 .id(grades.getId())
                 .grade(grades.getGrade())
+                .event_id(grades.getEvent().getId())
                 .build();
     }
 }
