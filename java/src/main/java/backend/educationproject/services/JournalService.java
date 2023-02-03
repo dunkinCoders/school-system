@@ -6,6 +6,7 @@ import backend.educationproject.entities.*;
 import backend.educationproject.mappers.GradeMapper;
 import backend.educationproject.mappers.StudentMapper;
 import backend.educationproject.repositories.*;
+import backend.educationproject.services.sorters.JournalDateComparator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,14 +19,16 @@ public class JournalService {
     private final StudentClassesRepository studentClassesRepository;
     private final GradesRepository gradesRepository;
     private final StudentsRepository studentsRepository;
+    private final EventsRepository eventsRepository;
 
     @Autowired
-    public JournalService(Teacher_SubjectsRepository teacher_subjectsRepository, JournalsRepository journalsRepository, StudentClassesRepository studentClassesRepository, GradesRepository gradesRepository, StudentsRepository studentsRepository) {
+    public JournalService(Teacher_SubjectsRepository teacher_subjectsRepository, JournalsRepository journalsRepository, StudentClassesRepository studentClassesRepository, GradesRepository gradesRepository, StudentsRepository studentsRepository, EventsRepository eventsRepository) {
         this.teacher_subjectsRepository = teacher_subjectsRepository;
         this.journalsRepository = journalsRepository;
         this.studentClassesRepository = studentClassesRepository;
         this.gradesRepository = gradesRepository;
         this.studentsRepository = studentsRepository;
+        this.eventsRepository = eventsRepository;
     }
 
     public List<Journals> getTeacherJournals(Long teacher_id) {
@@ -91,6 +94,8 @@ public class JournalService {
                 grades.add(GradeMapper.toModel(grade));
             }
         });
+        JournalDateComparator journalDateComparator = new JournalDateComparator(eventsRepository);
+        grades.sort(journalDateComparator);
         return grades;
     }
 
