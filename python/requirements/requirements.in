@@ -1,2 +1,5 @@
 fastapi
 uvicorn[standard]
+sqlalchemy
+pydantic[email]
+psycopg2
