@@ -6,6 +6,7 @@ import backend.educationproject.entities.*;
 import backend.educationproject.mappers.GradeMapper;
 import backend.educationproject.mappers.StudentMapper;
 import backend.educationproject.repositories.*;
+import backend.educationproject.services.sorters.IPicker;
 import backend.educationproject.services.sorters.JournalDateComparator;
 import backend.educationproject.services.sorters.JournalMonthPicker;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,7 +75,7 @@ public class JournalService {
     }
 
     public List<ClientStudents> getGradesOrderByMonth(Long id, Long month) {
-        JournalMonthPicker journalMonthPicker = new JournalMonthPicker(eventsRepository);
+        IPicker journalMonthPicker = new JournalMonthPicker(eventsRepository);
         List<ClientStudents> grades_list = new ArrayList<>();
         List<Students> students = getAllStudentsFromClass(id);
         for (Students st : students) {

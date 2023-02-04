@@ -5,15 +5,16 @@ import backend.educationproject.repositories.EventsRepository;
 
 import java.util.*;
 
-public class JournalMonthPicker {
+public class JournalMonthPicker implements IPicker {
     private final EventsRepository eventsRepository;
 
     public JournalMonthPicker(EventsRepository eventsRepository) {
         this.eventsRepository = eventsRepository;
     }
 
+    @Override
     public void pick(List<ClientGrades> clientGrades, Long month) {
-        for (Iterator<ClientGrades> iterator = clientGrades.iterator(); iterator.hasNext();) {
+        for (Iterator<ClientGrades> iterator = clientGrades.iterator(); iterator.hasNext(); ) {
             ClientGrades client_grade = iterator.next();
             Date event_date = eventsRepository.findById(client_grade.getEvent_id()).get().getEvent_date();
             Calendar calendar = Calendar.getInstance();
