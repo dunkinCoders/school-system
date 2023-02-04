@@ -24,8 +24,6 @@ idna==3.4
     # via
     #   anyio
     #   email-validator
-psycopg2==2.9.5
-    # via -r requirements/requirements.in
 pydantic[email]==1.10.4
     # via
     #   -r requirements/requirements.in
