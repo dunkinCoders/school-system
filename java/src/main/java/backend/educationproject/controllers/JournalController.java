@@ -43,7 +43,7 @@ public class JournalController {
         return journalService.getAllGrades(id);
     }
 
-    @GetMapping("/grades/{id}/{month}/get")
+    @GetMapping("/grades/{id}/month={month}/get")
     public List<ClientStudents> getGradesOrderByMonth(@PathVariable Long id, @PathVariable Long month) {
         return journalService.getGradesOrderByMonth(id, month);
     }

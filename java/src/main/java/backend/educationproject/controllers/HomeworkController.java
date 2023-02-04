@@ -1,6 +1,8 @@
 package backend.educationproject.controllers;
 
 import backend.educationproject.clientmodels.ClientHomework;
+import backend.educationproject.entities.Homeworks;
+import backend.educationproject.postmodels.PostHomeworkModel;
 import backend.educationproject.services.HomeworkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,18 +19,23 @@ public class HomeworkController {
         this.homeworkService = homeworkService;
     }
 
-    @GetMapping("/{class_subject_id}")
-    public List<ClientHomework> getAllHomeworks() {
+    @GetMapping("/get/class={class_id}")
+    public List<ClientHomework> getAllHomeworks(@PathVariable Long class_id) {
+        return homeworkService.getAllHomeworks(class_id);
+    }
+
+    //soon
+    @GetMapping("/get/class={class_id}/actual")
+    public List<ClientHomework>getActualHomeworks(@PathVariable Long class_id){
         return null;
     }
 
-    @GetMapping("/{class_subject_id}/{id}")
-    public ClientHomework getConcreteHomework() {
-        return null;
-    }
+    @PostMapping("/add/class={class_id}")
+    public void assignHomeworkForClass(@PathVariable Long class_id, @RequestBody PostHomeworkModel homework) {
 
-    @PostMapping("/{class_subject_id}/add")
-    public void assignHomework() {
+    }
+    @PostMapping("/add/{subject_id}")
+    public void assignHomeworkForAllClasses(@PathVariable Long subject_id, @RequestBody PostHomeworkModel homework){
 
     }
 
