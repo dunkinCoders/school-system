@@ -3,6 +3,7 @@ package backend.educationproject.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
@@ -35,12 +36,10 @@ public class Teachers {
     @Column(name="email")
     @Email
     private String email;
-    @Column(name="teacher_login",nullable = false)
-    @NotBlank
-    private String teacher_login;
-    @Column(name="teacher_password",nullable = false)
-    @NotBlank
-    private String teacher_password;
+    @OneToOne
+    @JoinColumn(name="credit_id",referencedColumnName = "id",nullable = false)
+    @NotNull
+    private Credits credit_id;
     public Teachers() {
     }
 }

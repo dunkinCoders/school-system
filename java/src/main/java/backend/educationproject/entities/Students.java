@@ -39,16 +39,14 @@ public class Students {
     @Column(name="email")
     @Email
     private String email;
-    @Column(name="student_login",nullable = false)
-    @NotBlank
-    private String student_login;
-    @Column(name="student_password",nullable = false)
-    @NotBlank
-    private String student_password;
     @ManyToOne
     @JoinColumn(name = "class_id",referencedColumnName = "id",nullable = false)
     @NotNull
     private StudentClasses studentClass;
+    @OneToOne
+    @JoinColumn(name="credit_id",referencedColumnName = "id",nullable = false)
+    @NotNull
+    private Credits credit_id;
     public Students() {
     }
 }
