@@ -2,6 +2,20 @@ from pydantic import (
     BaseSettings,
     PostgresDsn,
 )
+import logging
+
+
+def config_logger():
+    file_handler = logging.FileHandler("logs.log")
+    file_handler.setLevel(logging.INFO)
+    fileformat = logging.Formatter("%(asctime)s:%(levelname)s:%(message)s", datefmt="%H:%M:%S")
+    file_handler.setFormatter(fileformat)
+
+    stream = logging.StreamHandler()
+    stream.setLevel(logging.INFO)
+    streamformat = logging.Formatter("%(asctime)s:%(levelname)s:%(message)s")
+    stream.setFormatter(streamformat)
+    logging.basicConfig(level=logging.DEBUG , handlers=[file_handler, stream])
 
 
 class Settings(BaseSettings):
