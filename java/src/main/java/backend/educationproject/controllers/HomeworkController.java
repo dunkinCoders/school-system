@@ -25,21 +25,21 @@ public class HomeworkController {
     }
 
     //soon
-    @GetMapping("/get/class={class_id}/actual")
+    @GetMapping("/class={class_id}/actual")
     public List<ClientHomework>getActualHomeworks(@PathVariable Long class_id){
         return null;
     }
 
-    @PostMapping("/add/class={class_id}")
+    @PostMapping("/class={class_id}")
     public void assignHomeworkForClass(@PathVariable Long class_id, @RequestBody PostHomeworkModel homework) {
 
     }
-    @PostMapping("/add/{subject_id}")
+    @PostMapping("/{subject_id}")
     public void assignHomeworkForAllClasses(@PathVariable Long subject_id, @RequestBody PostHomeworkModel homework){
 
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public void update_homework() {
 
     }

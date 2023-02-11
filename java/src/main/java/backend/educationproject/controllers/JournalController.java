@@ -27,23 +27,23 @@ public class JournalController {
         this.journalService = journalService;
     }
 
-    @GetMapping("/get/{teacher_id}")
+    @GetMapping("/{teacher_id}")
 //    @ApiOperation("Select all journals for existing teacher")
     public List<Journals> getTeacherJournals(@PathVariable Long teacher_id) {
         return journalService.getTeacherJournals(teacher_id);
     }
 
-    @GetMapping("/get/{class_id}/{subject_id}")
+    @GetMapping("/{class_id}/{subject_id}")
     public Journals getJournalByClassAndSubject(@PathVariable Long subject_id, @PathVariable Long class_id) {
         return journalService.getJournalByClassAndSubject(class_id, subject_id);
     }
 
-    @GetMapping("/grades/{id}/get")
+    @GetMapping("/grades/{id}")
     public List<ClientStudents> getAllGrades(@PathVariable Long id) {
         return journalService.getAllGrades(id);
     }
 
-    @GetMapping("/grades/{id}/month={month}/get")
+    @GetMapping("/grades/{id}/month={month}")
     public List<ClientStudents> getGradesOrderByMonth(@PathVariable Long id, @PathVariable Long month) {
         return journalService.getGradesOrderByMonth(id, month);
     }
