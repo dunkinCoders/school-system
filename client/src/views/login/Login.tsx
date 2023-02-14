@@ -1,22 +1,25 @@
+import "./Login.css"; 
+
+
 const Login = () => {
   return (
-    <div className="login-wrapper">
-      <form className="login-form">
+    <div className="login__container">
+      <form className="login__form">
         <h1 className="mb-2">Sign up</h1>
 
         {/*make it a separate component later*/}
-        <div className="login-input-wrapper">
+        <div className="login__input_wrapper">
           <label htmlFor="login">Login</label>
-          <input className="login-input" id="login" type="text" />
+          <input className="login__input" id="login" type="text" />
         </div>
 
         {/*make it a separate component later */}
-        <div className="login-input-wrapper">
+        <div className="login__input_wrapper">
           <label htmlFor="password">Password</label>
-          <input className="login-input" id="password" type="password" />
+          <input className="login__input" id="password" type="password" />
         </div>
 
-        <button className="login-button"> Login </button>
+        <button className="login__button"> Login </button>
 
         <p className="text soft">Forgot password?</p>
       </form>
