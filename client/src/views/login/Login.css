@@ -46,3 +46,12 @@
 
     background-color: #A4B3E8;
 }
+
+.login__heading{
+    margin-bottom: 2rem;
+}
+
+.login__forgot_password {
+    margin: 0;
+    color: #707070;
+}

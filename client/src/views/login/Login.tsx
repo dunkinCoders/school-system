@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <div className="login__container">
       <form className="login__form">
-        <h1 className="mb-2">Sign up</h1>
+        <h1 className="login__heading">Sign up</h1>
 
         {/*make it a separate component later*/}
         <div className="login__input_wrapper">
@@ -21,7 +21,7 @@ const Login = () => {
 
         <button className="login__button"> Login </button>
 
-        <p className="text soft">Forgot password?</p>
+        <p className="login__forgot_password">Forgot password?</p>
       </form>
     </div>
   );
