@@ -1,0 +1,48 @@
+/* Login styles */
+
+.login__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.1rem;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    align-items: center;
+    padding: 2.5rem 3rem;
+
+    border-radius: 27px;
+
+    background-color: #D9D9D9;
+}
+
+.login__input_wrapper {
+    min-width: 16rem; 
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.login__input {
+    border: none;
+
+    padding: .8rem;
+}
+
+.login__button {
+    border: none;
+    width: 100%;
+
+    font-family: inherit;
+    font-size: 1rem;
+    margin-top: 1.3rem;
+    padding: .8rem;
+
+    background-color: #A4B3E8;
+}
