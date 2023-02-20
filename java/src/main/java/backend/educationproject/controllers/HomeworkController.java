@@ -19,28 +19,39 @@ public class HomeworkController {
         this.homeworkService = homeworkService;
     }
 
-    @GetMapping("/get/class={class_id}")
+    @GetMapping("/class={class_id}")
     public List<ClientHomework> getAllHomeworks(@PathVariable Long class_id) {
         return homeworkService.getAllHomeworks(class_id);
     }
 
     //soon
     @GetMapping("/class={class_id}/actual")
-    public List<ClientHomework>getActualHomeworks(@PathVariable Long class_id){
+    public List<ClientHomework> getActualHomeworks(@PathVariable Long class_id) {
         return null;
     }
 
-    @PostMapping("/class={class_id}")
-    public void assignHomeworkForClass(@PathVariable Long class_id, @RequestBody PostHomeworkModel homework) {
-
+    @PostMapping("/{teacher_id}/subject={subject_id}/class={class_id}")
+    public void assignHomeworkForClass(@PathVariable Long class_id,
+                                       @PathVariable Long subject_id,
+                                       @PathVariable Long teacher_id,
+                                       @RequestBody PostHomeworkModel homework) {
+        homeworkService.assignHomeworkForOneClass(class_id, subject_id, teacher_id, homework);
     }
-    @PostMapping("/{subject_id}")
-    public void assignHomeworkForAllClasses(@PathVariable Long subject_id, @RequestBody PostHomeworkModel homework){
 
+    @PostMapping("/{teacher_id}/subject={subject_id}")
+    public void assignHomeworkForAllClasses(@PathVariable Long subject_id,
+                                            @PathVariable Long teacher_id,
+                                            @RequestBody PostHomeworkModel homework) {
+        homeworkService.assignHomeworkForAllClasses(subject_id, teacher_id, homework);
     }
 
-    @PutMapping("/{id}")
-    public void update_homework() {
+    @PatchMapping("/{id}")
+    public void updateHomework(@PathVariable Long id, @RequestBody PostHomeworkModel homework) {
+        homeworkService.update(id, homework);
+    }
 
+    @DeleteMapping("/{id}")
+    public void delete_homework(@PathVariable Long id) {
+        homeworkService.deleteHomework(id);
     }
 }
