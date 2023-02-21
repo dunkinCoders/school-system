@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from . import base_schemas
-from .models import model_type, Teachers
+from .models import model_type, Teachers, Classes, Subjects, Teacher_subjects, Journals, Events
 
 
 class Dao:
@@ -30,10 +30,86 @@ class TeacherDao(Dao):
         self.model = Teachers
 
     def create(self, schema: base_schemas.Schema):
-        pass
+        raise NotImplementedError()
 
     def update(self, schema: base_schemas.Schema):
-        pass
+        raise NotImplementedError()
 
     def delete(self, schema: base_schemas.Schema):
-        pass
+        raise NotImplementedError()
+
+
+class ClassDao(Dao):
+    def __init__(self, db: Session):
+        super().__init__(db)
+        self.model = Classes
+
+    def create(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def update(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def delete(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+
+class JournalDao(Dao):
+    def __init__(self, db: Session):
+        super().__init__(db)
+        self.model = Journals
+
+    def create(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def update(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def delete(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+
+class SubjectDao(Dao):
+    def __init__(self, db: Session):
+        super().__init__(db)
+        self.model = Subjects
+
+    def create(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def update(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def delete(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+
+class TeacherSubjectDao(Dao):
+    def __init__(self, db: Session):
+        super().__init__(db)
+        self.model = Teacher_subjects
+
+    def create(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def update(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def delete(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+
+class EventDao(Dao):
+    def __init__(self, db: Session):
+        super().__init__(db)
+        self.model = Events
+
+    def create(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def update(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
+    def delete(self, schema: base_schemas.Schema):
+        raise NotImplementedError()
+
