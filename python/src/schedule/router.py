@@ -16,5 +16,5 @@ def class_schedule_by_week(class_id: int, db: Session = Depends(get_db)):
         schedule: dict = get_class_schedule(db, class_id)
     except NoScheduleEventsArePresent as e:
         logging.error(e)
-        raise HTTPException(500, 'Schedule for this class is not found')
+        raise HTTPException(404, 'Schedule for this class is not found')
     return schedule

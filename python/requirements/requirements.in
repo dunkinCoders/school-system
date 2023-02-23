@@ -1,7 +1,8 @@
 fastapi
 uvicorn[standard]
-sqlalchemy
+sqlalchemy==1.3
 pydantic[email]
 psycopg2
 alembic
 httpx
+sqlacodegen
