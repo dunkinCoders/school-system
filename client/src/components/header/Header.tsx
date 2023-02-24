@@ -10,7 +10,7 @@ const Header = () => {
             className="header__title_link"
             to="/"
           >
-            Journal
+            Name
           </Link>
         </h1>
 
