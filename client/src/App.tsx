@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import Header from "./components/header/Header";
+import Sidebar from "./components/sidebar/Sidebar";
 
 import { Routes, Route } from "react-router-dom";
-import Login from "./views/Login";
+import Login from "./views/login/Login";
 
 function App() {
   return (
