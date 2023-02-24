@@ -1,0 +1,32 @@
+.header {
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header__link {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin-left: 1rem;
+}
+
+.header__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header__title_link {
+    color: #000;
+    text-decoration: none;
+
+}
+
+.header__section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}

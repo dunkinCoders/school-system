@@ -6,4 +6,6 @@ h1 {
     margin: 0;
 }
 
-
+main {
+    align-self: center;
+}
