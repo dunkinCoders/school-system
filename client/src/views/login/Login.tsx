@@ -1,5 +1,6 @@
 import "./Login.css"; 
 
+import LoginInput from "./Login.Input";
 
 const Login = () => {
   return (
@@ -7,20 +8,19 @@ const Login = () => {
       <form className="login__form">
         <h1 className="login__heading">Sign up</h1>
 
-        {/*make it a separate component later*/}
-        <div className="login__input_wrapper">
-          <label htmlFor="login">Login</label>
-          <input className="login__input" id="login" type="text" />
-        </div>
+        <LoginInput 
+          id="email"
+          type="text"
+          placeholder="Enter your email" 
+        />
 
-        {/*make it a separate component later */}
-        <div className="login__input_wrapper">
-          <label htmlFor="password">Password</label>
-          <input className="login__input" id="password" type="password" />
-        </div>
+        <LoginInput
+          id="password"
+          type="password"
+          placeholder="Enter your password"
+        />
 
         <button className="login__button"> Login </button>
-
         <p className="login__forgot_password">Forgot password?</p>
       </form>
     </div>
