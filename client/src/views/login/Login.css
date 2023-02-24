@@ -23,19 +23,42 @@
 
 .login__input_wrapper {
     min-width: 16rem; 
-
     display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+    margin-top: .7rem;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    gap: .5rem;
+    transition: all .2s ease-in-out;
+}
+
+.login__input_wrapper:hover {
+    box-shadow: 0 0 5px 1px hsl(227, 60%, 78%);
+}
+
+.login__input_wrapper:hover .login__input_icon {
+    color: hsl(227, 60%, 78%);
 }
 
 .login__input {
     border: none;
-
     padding: .8rem;
+    width: 100%;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.login__input:focus {
+    outline: none;
+}
+
+.login__input_icon {
+    margin-left: 1rem;
+    color: #707070;
 }
 
 .login__button {
+    border-radius: 10px;
     border: none;
     width: 100%;
 
@@ -44,7 +67,12 @@
     margin-top: 1.3rem;
     padding: .8rem;
 
-    background-color: #A4B3E8;
+    background-color: hsl(227, 60%, 78%);
+    transition: all .2s ease-in-out;
+}
+
+.login__button:hover {
+    background-color: hsl(227, 60%, 70%);
 }
 
 .login__heading{
