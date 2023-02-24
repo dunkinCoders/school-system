@@ -16,6 +16,13 @@ class TeacherName(Schema):
         orm_mode = True
 
 
+class TeacherSubject(BaseModel):
+    id: int
+    teacher_id: int
+    class_id: int
+    subject_id: int
+
+
 class Weekday(str, Enum):
     monday = "Monday"
     tuesday = "Tuesday"
@@ -57,18 +64,22 @@ class ScheduleClass(Schema):
 
 class Schedule(BaseModel):
     classes: list[ScheduleClass] = Field(...)
-    _class: _Class = Field(...)
 
     class Config:
         orm_mode = True
 
 
-def _model_to_dict_schedule(schedule_events: list[TypeVar('ScheduleJoinedQuery', Base, Base)]):
-    if schedule_events is None or not schedule_events:
-        raise NoScheduleEventsArePresent()
+def _model_to_class_dict(schedule_events: list[TypeVar('ScheduleJoinedQuery', Base, Base)]):
     _dict = {}
     _class = schedule_events[0].teacher_subject._class
     _dict['class'] = {'id': _class.id, 'name': f'{_class.name_number} - {_class.name_letter}'}
+    return _dict
+
+
+def model_to_dict_schedule(schedule_events: list[TypeVar('ScheduleJoinedQuery', Base, Base)]):
+    if schedule_events is None or not schedule_events:
+        raise NoScheduleEventsArePresent()
+    _dict = _model_to_class_dict(schedule_events)
     events = []
     for event in schedule_events:
         subject = event.teacher_subject.subject
@@ -88,3 +99,4 @@ def _model_to_dict_schedule(schedule_events: list[TypeVar('ScheduleJoinedQuery',
     _dict["events"] = events
 
     return _dict
+
