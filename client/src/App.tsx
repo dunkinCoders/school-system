@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./components/header/Header";
-import Sidebar from "./components/sidebar/Sidebar";
 
 import { Routes, Route } from "react-router-dom";
 import Login from "./views/login/Login";
@@ -14,7 +13,6 @@ function App() {
       </header>
 
       <main>
-        <Sidebar />
 
         <Routes>
           <Route path="/" element={<h1>Home</h1>} />
