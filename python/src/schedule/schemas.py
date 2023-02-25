@@ -58,6 +58,7 @@ class ScheduleClass(Schema):
     room_name: str
     subject: Subject = Field(...)
     teacher: TeacherName = Field(...)
+    _class: _Class = Field(...)
 
     class Config:
         orm_mode = True

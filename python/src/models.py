@@ -7,6 +7,20 @@ Base = declarative_base()
 metadata = Base.metadata
 
 
+class TeacherSubject(Base):
+    __tablename__ = 'teacher_subjects'
+    __table_args__ = {'schema': 'public'}
+
+    id = Column(BigInteger, primary_key=True, server_default=text("nextval('\"public\".teacher_subjects_id_seq'::regclass)"))
+    teacher_id = Column(ForeignKey('public.teachers.id'), nullable=False)
+    class_id = Column(ForeignKey('public.classes.id'), nullable=False)
+    subject_id = Column(ForeignKey('public.subjects.id'), nullable=False)
+
+    _class = relationship('_Class')
+    subject = relationship('Subject')
+    teacher = relationship('Teacher')
+
+
 class EventType(Base):
     __tablename__ = 'event_types'
     __table_args__ = {'schema': 'public'}
@@ -22,6 +36,8 @@ class Subject(Base):
     id = Column(BigInteger, primary_key=True, server_default=text("nextval('\"public\".subjects_id_seq'::regclass)"))
     name = Column(String(100), nullable=False)
 
+    schedule = relationship('Schedule', secondary=TeacherSubject, back_populates='subject')
+
 
 class Teacher(Base):
     __tablename__ = 'teachers'
@@ -34,6 +50,8 @@ class Teacher(Base):
     phone = Column(BigInteger, nullable=False)
     email = Column(String(100))
 
+    schedule = relationship('Schedule', secondary=TeacherSubject, back_populates='teacher')
+
 
 class _Class(Base):
     __tablename__ = 'classes'
@@ -45,6 +63,7 @@ class _Class(Base):
     head_teacher_id = Column(ForeignKey('public.teachers.id'), nullable=False, unique=True)
 
     head_teacher = relationship('Teacher', uselist=False)
+    schedule = relationship('Schedule', secondary=TeacherSubject, back_populates='_class')
 
 
 class Student(Base):
@@ -60,20 +79,6 @@ class Student(Base):
     class_id = Column(ForeignKey('public.classes.id'), nullable=False)
 
     _class = relationship('_Class')
-
-
-class TeacherSubject(Base):
-    __tablename__ = 'teacher_subjects'
-    __table_args__ = {'schema': 'public'}
-
-    id = Column(BigInteger, primary_key=True, server_default=text("nextval('\"public\".teacher_subjects_id_seq'::regclass)"))
-    teacher_id = Column(ForeignKey('public.teachers.id'), nullable=False)
-    class_id = Column(ForeignKey('public.classes.id'), nullable=False)
-    subject_id = Column(ForeignKey('public.subjects.id'), nullable=False)
-
-    _class = relationship('_Class')
-    subject = relationship('Subject')
-    teacher = relationship('Teacher')
 
 
 class Homework(Base):
@@ -109,6 +114,9 @@ class Schedule(Base):
     room_name = Column(String(10))
 
     teacher_subject = relationship('TeacherSubject')
+    teacher = relationship('Teacher', secondary=TeacherSubject, back_populates='schedule')
+    _class = relationship('_Class', secondary=TeacherSubject, back_populates='schedule')
+    subject = relationship('Subject', secondary=TeacherSubject, back_populates='schedule')
 
 
 class Event(Base):
